@@ -1,0 +1,7 @@
+
+mvn install
+sudo docker build -t myorg/myapp .
+sudo docker tag myorg/myapp registry.heroku.com/powerful-falls-37665/web
+sudo docker push registry.heroku.com/powerful-falls-37665/web
+sudo docker run -p 5000:5000 registry.heroku.com/powerful-falls-37665/web
+heroku container:release web
